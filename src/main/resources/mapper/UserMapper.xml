@@ -3,12 +3,13 @@
 <mapper namespace="com.wally.dao.IUserDao" >
   <resultMap id="BaseResultMap" type="com.wally.dto.User" >
     <id column="id" property="id" jdbcType="INTEGER" />
-    <result column="name" property="name" jdbcType="VARCHAR" />
+    <result column="username" property="username" jdbcType="VARCHAR" />
     <result column="password" property="password" jdbcType="VARCHAR" />
-    <result column="age" property="age" jdbcType="INTEGER" />
+    <result column="idCard" property="idCard" jdbcType="VARCHAR" />
+    <result column="phone" property="phone" jdbcType="VARCHAR" />
   </resultMap>
   <sql id="Base_Column_List" >
-    id, name, password, age
+    id, username, password, idCard, phone
   </sql>
   
   <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
@@ -24,10 +25,9 @@
   </delete>
   
   <insert id="insert" parameterType="com.wally.dto.User" >
-    insert into t_user (id, name, password, 
-      age)
-    values (#{id,jdbcType=INTEGER}, #{name,jdbcType=VARCHAR}, #{password,jdbcType=VARCHAR}, 
-      #{age,jdbcType=INTEGER})
+    insert into t_user (id, username, password, idCard, phone)
+    values (#{id,jdbcType=INTEGER}, #{username,jdbcType=VARCHAR}, #{password,jdbcType=VARCHAR}, 
+      #{idCard,jdbcType=VARCHAR}, #{phone,jdbcType=VARCHAR})
   </insert>
   
   <insert id="insertSelective" parameterType="com.wally.dto.User" >
@@ -36,53 +36,51 @@
       <if test="id != null" >
         id,
       </if>
-      <if test="name != null" >
-        name,
+      <if test="username != null" >
+        username,
       </if>
       <if test="password != null" >
         password,
       </if>
-      <if test="age != null" >
-        age,
-      </if>
+        idCard,
+        phone,
     </trim>
     <trim prefix="values (" suffix=")" suffixOverrides="," >
       <if test="id != null" >
         #{id,jdbcType=INTEGER},
       </if>
-      <if test="name != null" >
-        #{name,jdbcType=VARCHAR},
+      <if test="username != null" >
+        #{username,jdbcType=VARCHAR},
       </if>
       <if test="password != null" >
         #{password,jdbcType=VARCHAR},
       </if>
-      <if test="age != null" >
-        #{age,jdbcType=INTEGER},
-      </if>
+      	#{idCard,jdbcType=VARCHAR},
+        #{phone,jdbcType=VARCHAR},
     </trim>
   </insert>
   
   <update id="updateByPrimaryKeySelective" parameterType="com.wally.dto.User" >
     update t_user
     <set >
-      <if test="name != null" >
-        name = #{name,jdbcType=VARCHAR},
+      <if test="username != null" >
+        username = #{username,jdbcType=VARCHAR},
       </if>
       <if test="password != null" >
         password = #{password,jdbcType=VARCHAR},
       </if>
-      <if test="age != null" >
-        age = #{age,jdbcType=INTEGER},
-      </if>
+        idCard = #{idCard,jdbcType=VARCHAR},
+      	phone = #{phone,jdbcType=VARCHAR},
     </set>
     where id = #{id,jdbcType=INTEGER}
   </update>
   
   <update id="updateByPrimaryKey" parameterType="com.wally.dto.User" >
     update t_user
-    set name = #{name,jdbcType=VARCHAR},
+    set username = #{username,jdbcType=VARCHAR},
       password = #{password,jdbcType=VARCHAR},
-      age = #{age,jdbcType=INTEGER}
+      idCard = #{idCard,jdbcType=VARCHAR},
+      phone = #{phone,jdbcType=VARCHAR},
     where id = #{id,jdbcType=INTEGER}
   </update>
   

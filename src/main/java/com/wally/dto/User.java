@@ -2,9 +2,10 @@ package com.wally.dto;
 
 public class User {
 	private Integer id;
-	private String name;
+	private String username;
 	private String password;
-	private Integer age;
+	private String idCard;
+	private String phone;
 
 	public Integer getId() {
 		return id;
@@ -14,12 +15,12 @@ public class User {
 		this.id = id;
 	}
 
-	public String getName() {
-		return name;
+	public String getUsername() {
+		return username;
 	}
 
-	public void setName(String name) {
-		this.name = name;
+	public void setUsername(String username) {
+		this.username = username;
 	}
 
 	public String getPassword() {
@@ -30,11 +31,20 @@ public class User {
 		this.password = password == null ? null : password.trim();
 	}
 
-	public Integer getAge() {
-		return age;
+	public String getIdCard() {
+		return idCard;
 	}
 
-	public void setAge(Integer age) {
-		this.age = age;
+	public void setIdCard(String idCard) {
+		this.idCard = idCard;
 	}
+
+	public String getPhone() {
+		return phone;
+	}
+
+	public void setPhone(String phone) {
+		this.phone = phone;
+	}
+
 }
