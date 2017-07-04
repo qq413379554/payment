@@ -26,9 +26,6 @@ public class UserController {
 
 	@RequestMapping("/login")
 	public String login(HttpServletRequest request, Model model) {
-		int userId = Integer.parseInt(request.getParameter("id"));
-		User user = this.userService.getUserById(userId);
-		model.addAttribute("user", user);
 		return "base/login";
 	}
 }
