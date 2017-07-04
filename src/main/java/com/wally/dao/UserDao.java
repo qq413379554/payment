@@ -2,7 +2,7 @@ package com.wally.dao;
 
 import com.wally.dto.User;
 
-public interface IUserDao {
+public interface UserDao {
     int deleteByPrimaryKey(Integer id);
 
     int insert(User record);

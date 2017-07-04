@@ -4,15 +4,15 @@ import javax.annotation.Resource;
 
 import org.springframework.stereotype.Service;
 
-import com.wally.dao.IUserDao;
+import com.wally.dao.UserDao;
 import com.wally.dto.User;
-import com.wally.service.IUserService;
+import com.wally.service.UserService;
 
 @Service("userService")
-public class UserServiceImpl implements IUserService {
+public class UserServiceImpl implements UserService {
 	
 	@Resource
-	private IUserDao userDao;
+	private UserDao userDao;
 	
 	public User getUserById(int userId) {
 		return userDao.selectByPrimaryKey(userId);
