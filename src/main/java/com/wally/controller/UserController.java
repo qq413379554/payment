@@ -18,7 +18,7 @@ public class UserController {
 
 	@RequestMapping("/userList")
 	public String userList(HttpServletRequest request, Model model) {
-		int userId = Integer.parseInt(request.getParameter("id").replaceAll(" ", ""));
+		int userId = Integer.parseInt(request.getParameter("id"));
 		User user = this.userService.getUserById(userId);
 		model.addAttribute("user", user);
 		return "user/userList";
@@ -26,10 +26,10 @@ public class UserController {
 
 	@RequestMapping("/register")
 	public String register(HttpServletRequest request, Model model) {
-		String username = request.getParameter("username").replaceAll(" ", "");
-		String password = request.getParameter("password").replaceAll(" ", "");
-		String idCard = request.getParameter("idCard").replaceAll(" ", "");
-		String phone = request.getParameter("phone").replaceAll(" ", "");
+		String username = request.getParameter("username");
+		String password = request.getParameter("password");
+		String idCard = request.getParameter("idCard");
+		String phone = request.getParameter("phone");
 		User user = new User();
 		user.setUsername(username);
 		user.setPassword(password);
@@ -43,7 +43,7 @@ public class UserController {
 
 	@RequestMapping("/login")
 	public String login(HttpServletRequest request, Model model) {
-		return "base/login";
+		return "user/login";
 	}
 
 }
