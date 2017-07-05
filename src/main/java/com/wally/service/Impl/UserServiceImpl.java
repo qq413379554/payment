@@ -24,4 +24,9 @@ public class UserServiceImpl implements UserService {
 		return userDao.selectByUsername(username);
 	}
 
+	@Override
+	public int register(User user) {
+		return userDao.insertSelective(user);
+	}
+
 }

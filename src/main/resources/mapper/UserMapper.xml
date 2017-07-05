@@ -40,9 +40,7 @@
   <insert id="insertSelective" parameterType="com.wally.dto.User" >
     insert into t_user
     <trim prefix="(" suffix=")" suffixOverrides="," >
-      <if test="id != null" >
         id,
-      </if>
       <if test="username != null" >
         username,
       </if>
@@ -53,9 +51,7 @@
         phone,
     </trim>
     <trim prefix="values (" suffix=")" suffixOverrides="," >
-      <if test="id != null" >
         #{id,jdbcType=INTEGER},
-      </if>
       <if test="username != null" >
         #{username,jdbcType=VARCHAR},
       </if>

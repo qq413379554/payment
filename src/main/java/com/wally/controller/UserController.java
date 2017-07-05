@@ -18,8 +18,25 @@ public class UserController {
 
 	@RequestMapping("/userList")
 	public String userList(HttpServletRequest request, Model model) {
-		int userId = Integer.parseInt(request.getParameter("id"));
+		int userId = Integer.parseInt(request.getParameter("id").replaceAll(" ", ""));
 		User user = this.userService.getUserById(userId);
+		model.addAttribute("user", user);
+		return "user/userList";
+	}
+
+	@RequestMapping("/register")
+	public String register(HttpServletRequest request, Model model) {
+		String username = request.getParameter("username").replaceAll(" ", "");
+		String password = request.getParameter("password").replaceAll(" ", "");
+		String idCard = request.getParameter("idCard").replaceAll(" ", "");
+		String phone = request.getParameter("phone").replaceAll(" ", "");
+		User user = new User();
+		user.setUsername(username);
+		user.setPassword(password);
+		user.setIdCard(idCard);
+		user.setPhone(phone);
+		userService.register(user);
+		model.addAttribute("msg", "注册成功");
 		model.addAttribute("user", user);
 		return "user/userList";
 	}
@@ -28,4 +45,5 @@ public class UserController {
 	public String login(HttpServletRequest request, Model model) {
 		return "base/login";
 	}
+
 }

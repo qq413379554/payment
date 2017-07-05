@@ -7,8 +7,9 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
 <html>
   <head>
+    <base href="<%=basePath%>">
     
-    <title>My JSP 'showUser.jsp' starting page</title>
+    <title>UserList</title>
     
 	<meta http-equiv="pragma" content="no-cache">
 	<meta http-equiv="cache-control" content="no-cache">
@@ -18,20 +19,15 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	<!--
 	<link rel="stylesheet" type="text/css" href="styles.css">
 	-->
-	<style> 
-	body{ text-align:center} 
-	.div{ margin:0 auto; width:400px; height:100px; border:1px solid #F00} 
-	/* css注释：为了观察效果设置宽度 边框 高度等样式 */ 
-	</style> 
+
   </head>
   
   <body>
-    <h1>Welcome Payment system. </h1>
-    <form action="${pageContext.request.contextPath }/user/register">  
+   	<form action="${pageContext.request.contextPath }/user/regist">  
         <table border="1">  
             <tr>  
                 <td>用户名</td>  
-                <td><input type="text" name="username"></td>  
+                <td><input type="text" name="name"></td>  
             </tr>  
             <tr>  
                 <td>密码</td>  
@@ -41,6 +37,6 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
                 <td><input type="submit" value="注册"></td>  
             </tr>  
         </table>  
-    </form>  
+    </form> 
   </body>
 </html>
