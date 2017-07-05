@@ -18,15 +18,10 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	<!--
 	<link rel="stylesheet" type="text/css" href="styles.css">
 	-->
-	<style> 
-	body{ text-align:center} 
-	.div{ margin:0 auto; width:400px; height:100px; border:1px solid #F00} 
-	/* css注释：为了观察效果设置宽度 边框 高度等样式 */ 
-	</style> 
   </head>
   
   <body>
-    <h1>Welcome Payment system. </h1>
+    <h1>Welcome Payment system.</h1>
     <form action="${pageContext.request.contextPath }/user/register">  
         <table border="1">  
             <tr>  
