@@ -50,7 +50,6 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
                     <input type="submit" class="btn text-center login-btn" value="立即登录" />
                 </form>
                 <div class="forget">
-                   
                     <a href="#" class="forget-pwd text-small fl">忘记登录密码？</a><a href="${pageContext.request.contextPath }/user/register" class="forget-new text-small fr" id="forget-new">注册账号</a>
                 </div>
             </div>
