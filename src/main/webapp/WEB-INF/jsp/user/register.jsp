@@ -56,7 +56,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
                 <td><input id="idCard" name="idCard" type="text" /></td>  
             </tr>
             	<td><input id="deal" checked="checked" type="checkbox"/>我已阅读并同意</td> 
-            	<td><a target="_blank" href="/serviceAgreement">《南瓜马车网站服务协议》 </a></td>   
+            	<td><a target="_blank" href="/serviceAgreement">《Payment System服务协议》 </a></td>   
             <tr>  
                 <td><input type="button" value="立即注册" onclick="register();"></td>
                 <td><input type="reset" value="重置"></td>  
@@ -65,8 +65,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
     </form> 
   </body>
   <script type="text/javascript">
-   function register(){
-	   
+   function register(){ 
    }
   </script>
 </html>
