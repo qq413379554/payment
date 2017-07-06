@@ -5,7 +5,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 %>
 
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
-<html>
+<html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 	<base href="<%=basePath%>">
 	
@@ -17,22 +17,22 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	<meta http-equiv="expires" content="0">
 	<meta http-equiv="keywords" content="payment,keyword2,keyword3">
 	<meta http-equiv="description" content="This is payment system">
-    <link href="css/content/ui/layout.css" rel="stylesheet" />
-    <link href="css/content/ui/login.css" rel="stylesheet"/>
-	<style>
+    <link href="stylesheets/layout.css" rel="stylesheet" />
+    <link href="stylesheets/login.css" rel="stylesheet"/>
+    <style>
         .ibar {
             display: none;
         }
     </style>
 </head>
 
-<body>
+<body class="login-bg">
 	<div class="main ">
         <!--登录-->
         <div class="login-dom login-max">
             <div class="logo text-center">
                 <a href="#">
-                    <img src="image/content/ui/logo.png" width="180px" height="180px" />
+                    <img src="image/login/logo.png" width="180px" height="180px" />
                 </a>
             </div>
             <div class="login container " id="login">
@@ -66,7 +66,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
         </div>
     </div>
 </body>
-<script src="js/jquery/jquery-3.2.1.min.js"></script>
+<script src="javascripts/jquery/jquery-3.2.1.min.js"></script>
 <script type="text/javascript">
     function popup_msg(msg) {
         $(".popup").html("" + msg + "");
