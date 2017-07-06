@@ -9,7 +9,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
   <head>
     <base href="<%=basePath%>">
     
-    <title>UserList</title>
+    <title>Register</title>
     
 	<meta http-equiv="pragma" content="no-cache">
 	<meta http-equiv="cache-control" content="no-cache">
@@ -43,29 +43,38 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
             </tr>
             <tr>  
                 <td>验证码：</td>  
-                <td><input id="phone" name="phone" type="text" /></td>
+                <td><input id="code" name="code" type="text" /></td>
                 <td>这里增加验证码图片</td>   
             </tr>
             <tr>  
                 <td>手机验证码：</td>  
-                <td><input id="phone" name="phone" type="text" /></td>
-                <td><input type="button" value="获取验证码"></td>
+                <td><input id="checkCode" name="checkCode" type="text" /></td>
+                <td><input id="checkCodeButton" name="checkCodeButton" type="button" value="获取验证码"></td>
             </tr>
             <tr>  
                 <td>身份认证:</td>  
                 <td><input id="idCard" name="idCard" type="text" /></td>  
             </tr>
-            	<td><input id="deal" checked="checked" type="checkbox"/>我已阅读并同意</td> 
+            	<td><input id="deal" name="deal" checked="checked" type="checkbox"/>我已阅读并同意</td> 
             	<td><a target="_blank" href="/serviceAgreement">《Payment System服务协议》 </a></td>   
             <tr>  
-                <td><input type="button" value="立即注册" onclick="register();"></td>
-                <td><input type="reset" value="重置"></td>  
+                <td><input id="submit" name="submit" type="button" value="立即注册" onclick="register();"></td>
+                <td><input id="reset" name="reset" type="reset" value="重置"></td>  
             </tr>  
         </table>  
     </form> 
   </body>
+  <script src="javascripts/jquery/jquery-3.2.1.min.js"></script>
   <script type="text/javascript">
-   function register(){ 
+   function register(){
+	   var username = $("#username").val().trim();
+	   var password = $("#password").val().trim();
+	   var confirm = $("#confirm").val().trim();
+	   var phone = $("#phone").val().trim();
+	   var code = $("#code").val().trim();
+	   var checkCode = $("#checkCode").val().trim();
+	   var idCard = $("#idCard").val().trim();
+	   window.alert(username);
    }
   </script>
 </html>
