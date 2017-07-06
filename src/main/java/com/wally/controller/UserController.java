@@ -24,8 +24,8 @@ public class UserController {
 		return "user/userList";
 	}
 
-	@RequestMapping("/register")
-	public String register(HttpServletRequest request, Model model) {
+	@RequestMapping("/registerIndex")
+	public String registerIndex(HttpServletRequest request, Model model) {
 		String username = request.getParameter("username");
 		String password = request.getParameter("password");
 		String idCard = request.getParameter("idCard");
@@ -40,10 +40,18 @@ public class UserController {
 		model.addAttribute("user", user);
 		return "user/userList";
 	}
+	
+	@RequestMapping("/register")
+	public String register(HttpServletRequest request, Model model) {
+		return "user/register";
+	}
 
 	@RequestMapping("/login")
 	public String login(HttpServletRequest request, Model model) {
-		return "user/login";
+		String username = request.getParameter("username");
+		User user = this.userService.getUserByUsername(username);
+		model.addAttribute("user", user);
+		return "user/userList";
 	}
 
 }
